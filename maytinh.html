@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend> Máy tính</legend>
+        <span>số a </span><input id="1" type="number">
+        <span>số b</span><input id="2" type="number">
+        <button type="button" onclick="tinhtoan('cong')">Cộng</button>
+        <button type="button" onclick="tinhtoan('tru')">trừ</button>
+        <button type="button" onclick="tinhtoan('nhan')">nhân</button>
+        <button type="button" onclick="tinhtoan('chia')">chia</button>
+        <p id="result"> kết quả</p>
+    </fieldset>
+</form>
+<script>
+
+    function tinhtoan(phepTinh) {
+        let number1 = +document.getElementById('1').value;
+        let number2 = +document.getElementById('2').value;
+        let ketqua = 0;
+        let result = "ket qua: ";
+
+        switch (phepTinh) {
+            case "cong":
+                ketqua = number1 + number2;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            case "tru":
+                ketqua = number1 - number2;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            case "nhan":
+                ketqua = number1 * number2;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            case "chia":
+                ketqua = number1 / number2;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            default:
+                alert("");
+        }
+    }
+</script>
+</body>
+</html>
